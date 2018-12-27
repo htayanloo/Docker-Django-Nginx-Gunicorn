@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: ./src
+    command: gunicorn -c gunicorn.conf HT.wsgi
+    volumes:
+      - ./HT:/HT
+    ports:
+      - "8000:8000"
+
+  nginx:
+    build: ./nginx
+    depends_on:
+      - web
+    command: nginx -g 'daemon off;'
+    ports:
+      - "80:80"
+    volumes:
+      - ./HT/static:/var/www/static
+      - ./HT/media:/var/www/media
