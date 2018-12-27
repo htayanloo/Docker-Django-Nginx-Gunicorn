@@ -5,16 +5,16 @@ how to dockerize django project with serve static file by nginx and run over gun
 
 how to use :
 
-#Step-1:
+# Step-1:
 
 First Copy your project in SRC directory:
 
-#Step-2:
+# Step-2:
 Add STATIC_ROOT = '/HT/static'  to settings file
-#Step-3:
+# Step-3:
 Check static file and migrate is Ok in project
 
-#Step-4:
+# Step-4:
 
 run command :  docker-compose up
 
